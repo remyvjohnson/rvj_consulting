@@ -1,0 +1,268 @@
+/*! Nav Bar CSS */
+    @media {
+        #mainNav.remy-navbar {
+            padding-top: .5rem;
+            padding-bottom: .5rem;
+            background: transparent
+        }
+    }
+
+    /*! Logo CSS */
+        /*! RVJ CSS */
+            #mainNav .navbar-brand {
+                font-family: 'EB Garamond', serif;
+                color: #78CEE5;
+                font-size: xxx-large;
+                margin: 0;
+            }
+        /*! "." CSS */
+            #mainNav .navbar-brand.logo-period {
+                color: #F58735;
+                margin: 0;
+            }
+        /*! Retail Consulting CSS */  
+            #mainNav .navbar-brand.sub-logo {
+                font-size: x-large;
+                padding-top: 1.5rem;
+                padding-left: .5rem;
+            }
+
+            @media (min-width: 992px) {
+                #mainNav.navbar-shrink .navbar-brand {
+                    font-size: 1.25em;
+                }
+            }
+
+            #mainNav .navbar-brand {
+                text-transform: none;
+            }
+                
+
+    /*! Menu Hover CSS */
+    #mainNav .navbar-nav .nav-item .nav-link.active, #mainNav .navbar-nav .nav-item .nav-link:hover {
+        color:#78CEE5;
+      }
+
+    /*! Nav Menu CSS */
+    #mainNav .navbar-nav .nav-item .nav-link {
+        font-family: 'Lora', serif;
+        color: #8C8C93;
+        font-size: large;
+    }
+
+    /*! Nav Menu Button CSS */
+    #mainNav .navbar-toggler {
+        background-color: #78CEE5;
+        font-family: 'Lora', serif;
+        color: #fff;
+    }
+
+
+/*! Whole Page CSS */
+#page-top{
+    background-image: url("../assets/img/dot-grid.png");
+}
+
+
+/*! Footer CSS */
+    a {
+        color: #8C8C93;
+    }
+
+    a:hover {
+        color: #8C8C93;
+    }
+
+    .col-lg-4.text-lg-left {
+        color: #8C8C93;
+    }
+
+    .footer{
+        background-color: white;
+    }
+
+
+/*! Homepage CSS */
+
+     /*! Carousel CSS */
+     .carousel-caption {
+        bottom: 40%;
+    }
+
+    .carousel-indicators {
+        bottom: 30%;
+    }
+
+    .bd-example {
+        margin: 10%;
+    }
+
+    .carousel-img {
+        width:  1200px;
+        height: 600px;
+    }
+
+    /*! First Slide Button CSS */
+    .btn.btn-primary.btn-l.js-scroll-trigger {
+        background-color: #78CEE5;
+        border-color: #78CEE5;
+        color: #fff;
+    }
+
+    /*! Second Slide Button CSS */
+    .btn.btn-primary.btn-l.js-scroll-trigger.orange-slide-button {
+        background-color: #F58735;
+        border-color: #F58735;
+        color: #fff;
+    }
+
+    .slide-header {
+        font-family: 'Lora', serif;
+        font-size: xx-large;
+        color: #fff;
+    }
+
+    .slide-sub-header {
+        font-family: 'Lora', serif;
+        font-size: large;
+        color: #fff;
+    }
+   
+
+/*! Service Page */
+    /*! Services Section */
+        .container.services {
+            background-color: #78CEE5;
+            padding: 5%;
+        }
+
+        .fa-stack.fa-4x {
+            display: block;
+            width: 100%;  
+            text-align: center;
+            padding: 30%;
+        }
+
+        .text-primary {
+            color: #F58735;
+          }
+
+        .portfolio-caption-heading {
+            font-family: 'Lora', serif;
+            color: #8C8C93;
+        }
+
+        .page-section h2.section-heading {
+            font-family: 'Lora', serif;
+            color: #fff;
+            font-size: xx-large;
+        } 
+
+        .page-section h3.section-subheading {
+            font-family: 'Lora', serif;
+            color: #fff;
+            font-size: large;
+        }
+
+       #portfolio .portfolio-item .portfolio-link .portfolio-hover {
+           background-color: #F58735;
+       }
+
+    /*! Modal Section */
+        .rvj-modal-header {
+            font-family: 'Lora', serif;
+            color: #8C8C93;
+        }
+
+        .rvj-modal-sub-header {
+            font-family: 'Lora', serif;
+            color: #8C8C93;
+        }
+
+        .rvj-modal-list-header {
+            font-family: 'Lora', serif;
+            color: #8C8C93;
+            font-weight: bolder;
+        }
+
+        .rvj-modal-list {
+            font-family: 'Lora', serif;
+            color: #8C8C93;
+            
+        }
+
+/*! About Page */
+    h2.section-heading.about-heading {
+    font-family: 'Lora', serif;
+    color: #78CEE5;
+    font-size: xxx-large;
+    }
+
+    .mypic {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 60%;
+    }
+
+    .row.align-items-center.my-5 {
+        padding: 5%;
+    }
+
+    .font-weight-light{
+        font-family: 'Lora', serif;
+        color: #F58735;
+    }
+
+    .about-description {
+        font-family: 'Lora', serif;
+        color: #8C8C93;
+    }
+
+/*! Contact Page */
+
+    section#contact {
+        background-image: url("../assets/img/dot-grid.png");
+        background-repeat: repeat;
+        background-position: center;
+    }
+
+    .page-section h2.section-heading {
+        font-family: 'Lora', serif;
+    }
+
+    section#contact .section-heading {
+        color: #78CEE5;
+    }
+
+      /*! Jumbotron Image CSS */
+      header.masthead {
+        padding-top: 10.5rem;
+        padding-bottom: 6rem;
+        text-align: center;
+        color: #fff;
+        
+        background-repeat: no-repeat;
+        background-attachment: scroll;
+        background-position: center center;
+        background-size: cover;
+        }
+
+    /*! Title CSS */
+    header.masthead .masthead-subheading {
+        font-family: 'Lora', serif;
+        font-style: normal;
+        color: #4f4e6a;
+        font-size: 3rem;
+        text-transform: uppercase;
+    }
+
+    /*! Description CSS */
+    header.masthead .masthead-heading {
+        font-family: 'Lora', serif;
+        font-style: normal;
+        color: #8E8EA2;
+        font-size: 1.5rem;
+        line-height: normal;
+        text-transform: none;
+    }
