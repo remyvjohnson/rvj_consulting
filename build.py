@@ -1,29 +1,44 @@
 print("Yep, it's working")
 
-#assign variables for the templates
-top_template = open('templates/top.html').read()
-bottom_template = open('templates/bottom.html').read()
+content_pages = [
+    {
+        'input_filename': 'content/index_content.html',
+        'output_filename': 'docs/index.html',
+        'title': 'RVJ. Retail Consulting: Home',
+    },
+    {
+        'input_filename': 'content/services_content.html',
+        'output_filename': 'docs/services.html',
+        'title': 'RVJ. Retail Consulting: Services',
+    },
+    {
+        'input_filename': 'content/about_content.html',
+        'output_filename': 'docs/about.html',
+        'title': 'RVJ. Retail Consulting: About Me',
+    },
+    {
+        'input_filename': 'content/contact_content.html',
+        'output_filename': 'docs/contact.html',
+        'title': 'RVJ. Retail Consulting: Contact Me',
+    },
+]
 
-#assign content to variable, combine and put in new file
-content = open('content/index_content.html').read()
+#Template Function - pulls in base.html and updates the title
+def templates(content_page):
+    template = open('templates/base.html').read()
+    updated_title_template = template.replace("{{title}}", content_page['title'])
+    return updated_title_template
 
-index_html = top_template + content + bottom_template
-open('docs/index.html', 'w+').write(index_html)
+#File Combination Function - reads content pages, embeds the content into the base file, and creates a combined file
+def file_combination(content_page, updated_title_template):
+    file_content = open(content_page['input_filename']).read()
+    combined_file = updated_title_template.replace("{{content}}", file_content)
+    open(content_page['output_filename'], 'w+').write(combined_file)
 
-# Repeat for Services file
-content = open('content/services_content.html').read()
+def main():
+    for content_page in content_pages:
+        updated_title_template = templates(content_page)
+        file_combination(content_page, updated_title_template)
+        print(content_page['title'],'page complete!')
 
-services_html = top_template + content + bottom_template
-open('docs/services.html', 'w+').write(services_html)
-
-# Repeat for About file
-content = open('content/about_content.html').read()
-
-about_html = top_template + content + bottom_template
-open('docs/about.html', 'w+').write(about_html)
-
-# Repeat for Contact file
-content = open('content/contact_content.html').read()
-
-contact_html = top_template + content + bottom_template
-open('docs/contact.html', 'w+').write(contact_html)
+main()
