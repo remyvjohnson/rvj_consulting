@@ -50,10 +50,6 @@
         font-size: large;
     }
 
-    .active{
-        background-color: #8C8C93;
-    }
-
     /*! Nav Menu Button CSS */
     #mainNav .navbar-toggler {
         background-color: #78CEE5;
