@@ -50,7 +50,7 @@ for content_file in glob.glob("content/*.html"):
         
         # for content_file in content_files:
         content_pages.append({
-        "input_filename": "content/"+ file_name,
+        "input_filename": "content/"+file_name,
         "title": name_only,
         "output_filename": "docs/"+ file_name,
         })
