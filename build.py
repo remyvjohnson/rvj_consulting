@@ -64,7 +64,7 @@ for content_file in glob.glob("content/*.html"):
 # Template Function - pulls in base.html and updates the title
 def templates(content_page):
     template = open('templates/base.html').read()
-    updated_title_template = template.replace("{{title}}", content_page['title'])
+    updated_title_template = template.replace("{{title|capitalize}}", content_page['title'])
     return updated_title_template
 
 #File Combination Function - reads content pages, embeds the content into the base file, and creates a combined file
