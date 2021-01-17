@@ -31,7 +31,7 @@ content_files = []
 for content_file in glob.glob("content/*.html"): 
     content_files.append(content_file)
     # print(content_files)
-    print('-PT1 COMPLETE-')
+    # print('-PT1 COMPLETE-')
 
     #extract info from file path names
     all_files = content_files
@@ -40,13 +40,11 @@ for content_file in glob.glob("content/*.html"):
     for all_file in all_files:  
         file_path = all_files[i]
         file_name = os.path.basename(file_path)
-        print(file_name)
+        # print(file_name)
         name_only, extension = os.path.splitext(file_name)
-        print(name_only)
-        print('-PT2 COMPLETE-')
+        # print(name_only)
+        # print('-PT2 COMPLETE-')
         i += 1
-
-
         
         # for content_file in content_files:
         content_pages.append({
@@ -54,8 +52,8 @@ for content_file in glob.glob("content/*.html"):
         "title": name_only,
         "output_filename": "docs/"+ file_name,
         })
-        print(content_pages)
-        print('-THE END!!-')
+        # print(content_pages)
+print('-Content Page List Successfully Created-')
     
 
 
