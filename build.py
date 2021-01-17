@@ -55,7 +55,7 @@ for content_file in glob.glob("content/*.html"):
         "output_filename": "docs/"+ file_name,
         })
         print(content_pages)
-        print('-THE END!-')
+        print('-THE END!!-')
     
 
 
