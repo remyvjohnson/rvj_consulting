@@ -1,4 +1,4 @@
-print("Build.py Starting!")
+print("utils.py loaded!")
 
 import glob
 import os
@@ -45,8 +45,7 @@ for content_file in glob.glob("content/*.html"):
             content_pages = content_pages,
         )
 
-        # write final docs file
-        open('docs/'+ file_name, 'w+').write(final_html)
+        # write final docs files
+#         open('docs/'+ file_name, 'w+').write(final_html)
 
-print('Doc File Creation Complete!')
-
+# print('Doc File Creation Complete!')
