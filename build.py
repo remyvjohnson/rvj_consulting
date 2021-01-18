@@ -2,8 +2,9 @@ print("Build.py Starting!")
 
 import glob
 import os
+from jinja2 import Template
 
-#loop through content files and create a list
+# loop through content files and create a list
 content_files = []
 for content_file in glob.glob("content/*.html"): 
     content_files.append(content_file)
@@ -28,25 +29,23 @@ for content_file in glob.glob("content/*.html"):
         "output_filename": "docs/"+ file_name,
         })
         # print(content_pages)
-print('-Content Page List Successfully Created-')
+# print('-Content Page List Successfully Created-')
 
-# Template Function - pulls in base.html and updates the title
-def templates(content_page):
-    template = open('templates/base.html').read()
-    updated_title_template = template.replace("{{title}}", content_page['title'])
-    return updated_title_template
+        # move contents file into variable
+        content_html = open("content/"+file_name).read()
 
-#File Combination Function - reads content pages, embeds the content into the base file, and creates a combined file
-def file_combination(content_page, updated_title_template):
-    file_content = open(content_page['input_filename']).read()
-    combined_file = updated_title_template.replace("{{content}}", file_content)
-    open(content_page['output_filename'], 'w+').write(combined_file)
+        # move base file into variable and assign to template
+        template_html = open("templates/base.html").read()
+        template = Template(template_html)
+        
+        # render template and sub in title and content
+        final_html = template.render(
+            title= name_only,
+            content=content_html,
+        )
 
-#loops through content_pages and creates output (doc) files
-def main():
-    for content_page in content_pages:
-        updated_title_template = templates(content_page)
-        file_combination(content_page, updated_title_template)
-    print('-Doc Files Successfully Created-')
-    print('Build.py Complete!')
-main()
+        # write final docs file
+        open('docs/'+ file_name, 'w+').write(final_html)
+
+print('Build.py Complete!')
+
