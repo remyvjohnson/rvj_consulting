@@ -29,19 +29,20 @@ for file in content_files:
 # loop through content_pages list and move html into variable
 for page in content_pages:
     content_html = open(page['input_filename']).read()
-
+    
     # move base file into variable and assign to template
     template_html = open("templates/base.html").read()
     template = Template(template_html)
     
+        
     # render template and sub in title and content
     final_html = template.render(
         title= name_only,
         content=content_html,
         content_pages = content_pages,
     )
-
-#     #write final docs files
-#     open('docs/'+ file_name, 'w+').write(final_html)
-
+    
+    #write final docs files
+    open(page['output_filename'], 'w+').write(final_html)
+    # print(page['output_filename'])
 # print('Doc Creation Complete!')
