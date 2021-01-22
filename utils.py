@@ -8,44 +8,40 @@ from jinja2 import Template
 content_files = []
 for content_file in glob.glob("content/*.html"): 
     content_files.append(content_file)
-    # print(content_files)
+# print(content_files)
 
-    #make content_files list available, loop through list, extract from file path
-    all_files = content_files
-    i = 0
-    content_pages = []
-    for all_file in all_files:  
-        file_path = all_files[i]
-        file_name = os.path.basename(file_path)
-        # print(file_name)
-        name_only, extension = os.path.splitext(file_name)
-        # print(name_only)
-        i += 1
-        
-        # create content_pages list
-        content_pages.append({
-        "input_filename": "content/"+file_name,
-        "title": name_only,
-        "output_filename": "docs/"+ file_name,
-        })
-        # print(content_pages)
-# print('-Content Page List Successfully Created-')
+#loop through content_file list and extract from file path
+content_pages = []
+for file in content_files:
+    file_name = os.path.basename(file)
+    name_only, extension = os.path.splitext(file_name)
+    # print(file_name)
+    # print(name_only)
+    
+    # create content_pages list
+    content_pages.append({
+    "input_filename": "content/"+file_name,
+    "title": name_only,
+    "output_filename": "docs/"+ file_name,
+    })
+# print(content_pages)
 
-        # move contents file into variable
-        content_html = open("content/"+file_name).read()
+# loop through content_pages list and move html into variable
+for page in content_pages:
+    content_html = open(page['input_filename']).read()
 
-        # move base file into variable and assign to template
-        template_html = open("templates/base.html").read()
-        template = Template(template_html)
-        
-        # render template and sub in title and content
-        final_html = template.render(
-            title= name_only,
-            content=content_html,
-            content_pages = content_pages,
-        )
+    # move base file into variable and assign to template
+    template_html = open("templates/base.html").read()
+    template = Template(template_html)
+    
+    # render template and sub in title and content
+    final_html = template.render(
+        title= name_only,
+        content=content_html,
+        content_pages = content_pages,
+    )
 
-        # write final docs files
-#         open('docs/'+ file_name, 'w+').write(final_html)
+#     #write final docs files
+#     open('docs/'+ file_name, 'w+').write(final_html)
 
-# print('Doc File Creation Complete!')
+# print('Doc Creation Complete!')
