@@ -20,6 +20,7 @@ for file in content_files:
     
     # create content_pages list
     content_pages.append({
+    "filename": file_name,
     "input_filename": "content/"+file_name,
     "title": name_only,
     "output_filename": "docs/"+ file_name,
@@ -37,9 +38,10 @@ for page in content_pages:
         
     # render template and sub in title and content
     final_html = template.render(
-        title= name_only,
+        title = name_only,
         content=content_html,
         content_pages = content_pages,
+        filename = file_name
     )
     
     #write final docs files
