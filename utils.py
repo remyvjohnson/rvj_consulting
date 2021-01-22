@@ -41,10 +41,23 @@ for page in content_pages:
         title = name_only,
         content=content_html,
         content_pages = content_pages,
-        filename = file_name
+        filename = file_name,
     )
     
     #write final docs files
     open(page['output_filename'], 'w+').write(final_html)
     # print(page['output_filename'])
 # print('Doc Creation Complete!')
+
+def new_page():
+    new_page_title = input('Title Name?')
+    new_page_content = '''
+        <div class="row align-items-center my-5">
+            <div class="col-lg-7">
+                <h1>New Content!</h1>
+                <p>New content</p>
+            </div>
+        </div>
+    '''
+    open('content/'+new_page_title+'.html', 'w+').write(new_page_content)
+    
